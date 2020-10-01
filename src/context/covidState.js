@@ -5,13 +5,15 @@ import covidReducer from './covidReducer'
 import axios from 'axios'
 
 import {
-    GET_SUMMARY_DATA
+    GET_SUMMARY_DATA,
+    SELECT_COUNTRY
 } from '../types'
 
 const CovidState = props => {
     const InitialState = {
         countries: [],
-        summary: {}
+        summary: {},
+        selectedCountry: {}
     }
 
     const [state, dispatch] = useReducer(covidReducer, InitialState)
@@ -27,12 +29,22 @@ const CovidState = props => {
             })
     }
 
+    const selectCountryFunc = (cc) => {
+        const country = state.countries.filter(e=> e.CountryCode === cc)
+        dispatch({
+            type: SELECT_COUNTRY,
+            payload: country[0]
+        })
+    }
+
     return (
         <CovidContext.Provider
             value={{
                 countries: state.countries,
                 summary: state.summary,
-                getSummaryFunc
+                selectedCountry: state.selectedCountry,
+                getSummaryFunc,
+                selectCountryFunc
             }}
         >
             {props.children}

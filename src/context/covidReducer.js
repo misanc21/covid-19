@@ -1,5 +1,6 @@
 import {
-    GET_SUMMARY_DATA
+    GET_SUMMARY_DATA,
+    SELECT_COUNTRY
 } from '../types'
 
 export default (state, action) => {
@@ -9,6 +10,11 @@ export default (state, action) => {
                 ...state,
                 summary: action.payload.Global,
                 countries: action.payload.Countries
+            })
+        case SELECT_COUNTRY:
+            return({
+                ...state,
+                selectedCountry: action.payload
             })
         default: 
         return state
