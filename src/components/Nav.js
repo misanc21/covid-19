@@ -62,13 +62,15 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Cabin',
     },
     menuButton:{
+        color: 'white',
         [theme.breakpoints.up('sm')]: {
             display: 'none'
         }
     },
     title: {
         marginRight: '2rem',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: 'white'
     },
     appBar: {
         display:'flex',

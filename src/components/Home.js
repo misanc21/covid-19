@@ -1,5 +1,6 @@
 import React from 'react';
-import { makeStyles, Paper, Grid, Typography } from '@material-ui/core';
+import { makeStyles, Grid, Typography } from '@material-ui/core';
+import DataHome from './DataHome'
 import mask from '../img/mask.png'
 
 
@@ -14,6 +15,7 @@ const Home = () => {
                     <img src={mask} alt="mask" className={classes.mask}/>
                     <Typography variant="h1" className={classes.hashtag}color="primary">#WearAMask</Typography>
                 </Grid>
+                <DataHome />
             </Grid>
         </div>
     );
@@ -32,7 +34,8 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center'
     },
     titleText: {
-        fontFamily: 'Bebas neue',
+        marginTop:'1.8rem',
+        fontFamily: 'Bebas neue, sans-serif',
         [theme.breakpoints.up('sm')]: {
             fontSize: '8rem'
         }
