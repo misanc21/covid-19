@@ -4,6 +4,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import FlagIcon from '@material-ui/icons/Flag';
 import {Link} from 'react-router-dom'
+import mask from '../img/mask.png'
 
 import CovidContext from '../context/covidContext'
 
@@ -19,7 +20,7 @@ const Nav = () => {
         getSummaryFunc()
     //eslint-disable-next-line
     }, [])
-    
+
     const handleToggle = (open) => {
         setDra(open)
     }
@@ -31,8 +32,8 @@ const Nav = () => {
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={()=> handleToggle(true)}>
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h4" className={classes.title}>
-                        Covid-19 Info
+                    <Typography variant="h5" className={classes.title}>
+                        <Link to="/" className={classes.link}><img src={mask} alt="mask" className={classes.mask}/>COVID-19 INFO</Link>
                     </Typography>
                     <div className={classes.links}>
                         <Typography variant="subtitle1">
@@ -81,7 +82,8 @@ const useStyles = makeStyles((theme) => ({
     title: {
         marginRight: '2rem',
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
+        fontSize:'2rem'
     },
     appBar: {
         display:'flex',
@@ -126,6 +128,14 @@ const useStyles = makeStyles((theme) => ({
             color: '#666666',
         }
 
+      },
+      mask: {
+          width:'40px',
+          position: 'absolute',
+          left: '17.7rem',
+          [theme.breakpoints.down('xs')]: {
+            left: '19.5rem',
+        }
       }
 }));
 
