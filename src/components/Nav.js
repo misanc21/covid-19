@@ -1,14 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { makeStyles, AppBar, Toolbar, Typography,IconButton, Drawer, List, ListItemText, ListItem, ListItemIcon} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import FlagIcon from '@material-ui/icons/Flag';
 import {Link} from 'react-router-dom'
 
+import CovidContext from '../context/covidContext'
+
 const Nav = () => {
     const classes = useStyles();
     const [dra, setDra] = useState(false)
+    const covidCon = useContext(CovidContext)
+    const {
+        getSummaryFunc
+    } = covidCon
 
+    useEffect(() => {
+        getSummaryFunc()
+    //eslint-disable-next-line
+    }, [])
+    
     const handleToggle = (open) => {
         setDra(open)
     }
