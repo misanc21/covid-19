@@ -10,7 +10,7 @@ const Home = () => {
         <div className={classes.root}>
             <Grid container>
                 <Grid item xs={12} className={classes.titleContainer}>
-                    <Typography variant="h1" className={classes.titleText}color="secondary">What's Happening with</Typography>
+                    <Typography variant="h1" className={classes.titleText} color="secondary">What's Happening with</Typography>
                     <Typography variant="h1" className={classes.titleText}color="secondary">Covid-19?</Typography>
                     <img src={mask} alt="mask" className={classes.mask}/>
                     <Typography variant="h1" className={classes.hashtag}color="primary">#WearAMask</Typography>

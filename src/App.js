@@ -8,19 +8,21 @@ import Nav from './components/Nav'
 import Home from './components/Home'
 import Pais from './components/Pais'
 import NoMatch from './components/NoMatch'
+import Footer from  './components/Footer'
 function App() {
   return (
     <Covidstate>
-      <Router>
-        <ThemeProvider theme={theme}>
-          <Nav />
-          <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route exact path='/pais' component={Pais}/>
-            <Route path="*" component={NoMatch} />
-          </Switch>
-        </ThemeProvider>
-      </Router>
+      <ThemeProvider theme={theme}>
+        <Router>
+            <Nav />
+            <Switch>
+              <Route exact path='/' component={Home}/>
+              <Route exact path='/pais' component={Pais}/>
+              <Route path="*" component={NoMatch} />
+            </Switch>
+        </Router>
+        <Footer />
+      </ThemeProvider>
     </Covidstate>
   );
 }
